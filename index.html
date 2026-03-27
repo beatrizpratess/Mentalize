@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Mentalize seu Futuro</title>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header class="navbar">
+       <nav>
+           <a href="#" class="nav-item" onclick="mostrarHome()">Início</a>
+           <a href="#" class="nav-item" onclick="mostrarApenasCursos()">Cursos</a>
+           <a href="#" class="nav-item" onclick="gerenciarPerfil()">Perfil</a>
+       </nav>
+
+
+       <div class="cart-icon" onclick="abrirCarrinho()">
+           <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrinho">
+       </div>
+   </header>
+
+
+   <main id="pagina-home" class="container">
+       <section id="hero-section" class="hero">
+           <div class="hero-content">
+               <h1 class="hero-title">
+                   MENTALIZE <br>
+                   <span class="gradient-text">SEU FUTURO</span>
+               </h1>
+               <p class="hero-description">
+                   Cursos para agregar sua jornada profissional e acadêmica.
+               </p>
+           </div>
+       </section>
+
+
+       <section id="secao-lista-cursos" class="course-list">
+           <div class="course-card" onclick="abrirCurso('publicidade')">
+               <div class="course-img-box">
+                   <img src="publicidade.jpg" alt="Publicidade">
+               </div>
+               <div class="course-info">
+                   <h3>Publicidade</h3>
+                   <p class="abnt-text">
+                       Aprenda a criar estratégias de comunicação que conectam marcas ao seu público-alvo. O curso capacita você a dominar o comportamento do consumidor e criar campanhas criativas.
+                   </p>
+               </div>
+           </div>
+
+
+           <div class="course-card" onclick="abrirCurso('design')">
+               <div class="course-img-box">
+                   <img src="design.jpg" alt="Design">
+               </div>
+               <div class="course-info">
+                   <h3>Design</h3>
+                   <p class="abnt-text">
+                       Explore os princípios visuais para transformar ideias em soluções gráficas impactantes e funcionais. Domine ferramentas e conceitos estéticos para criar identidades visuais.
+                   </p>
+               </div>
+           </div>
+
+
+           <div class="course-card" onclick="abrirCurso('programacao')">
+               <div class="course-img-box">
+                  <img src="programacao.jpg" alt="Programação">
+               </div>
+               <div class="course-info">
+                   <h3>Programação</h3>
+                   <p class="abnt-text">
+                       Desenvolva o raciocínio lógico para construir sistemas, sites e aplicativos por meio de linguagens de código. Ideal para quem deseja dominar a arquitetura do mundo digital.
+                   </p>
+               </div>
+           </div>
+
+
+           <div class="course-card" onclick="abrirCurso('office')">
+               <div class="course-img-box">
+            <img src="pacote-office.jpg" alt="Pacote Office">
+               </div>
+               <div class="course-info">
+                   <h3>Pacote Office</h3>
+                   <p class="abnt-text">
+                       Domine as ferramentas essenciais de produtividade para criar documentos, planilhas inteligentes e apresentações profissionais para o mercado corporativo.
+                   </p>
+               </div>
+           </div>
+       </section>
+</main> 
+
+
+   <main id="pagina-curso" class="container" style="display: none;">
+       <div class="top-nav-curso">
+           <span></span>
+           <a href="#" class="voltar-link" onclick="mostrarHome()">Voltar</a>
+       </div>
+
+
+       <div class="curso-layout">
+           <div class="curso-texto">
+               <h2 id="curso-titulo">Nome do Curso</h2>
+               <p id="curso-descricao" class="abnt-text">Descrição</p>
+
+
+               <div class="card-inscricao">
+                   <h3>Inscreva-se</h3>
+                   <input type="text" placeholder="Digite seu nome completo">
+                   <input type="email" placeholder="Digite seu e-mail">
+                   <input type="text" placeholder="Digite seu CPF">
+                   <button class="btn-continuar">Continuar</button>
+               </div>
+           </div>
+
+
+           <div class="curso-imagem-container">
+               <img id="curso-imagem" src="" alt="Imagem do Curso">
+           </div>
+       </div>
+   </main>
+
+
+   <main id="pagina-login" class="auth-wrapper" style="display: none;">
+       <div class="auth-container">
+           <div class="auth-header">
+               <h1>LOGIN</h1>
+               <p>Não possui conta? <a href="#" onclick="abrirCadastro()">Criar conta</a></p>
+           </div>
+
+
+           <div class="auth-card">
+               <input type="email" placeholder="Digite seu e-mail" class="auth-input">
+               <input type="password" placeholder="Digite sua senha" class="auth-input">
+               <button class="btn-continuar-auth" onclick="realizarLogin()">Continuar</button>
+           </div>
+       </div>
+   </main>
+
+
+   <main id="pagina-cadastro" class="auth-wrapper" style="display: none;">
+       <div class="auth-container">
+           <div class="auth-header">
+               <h1>CADASTRO</h1>
+               <p>Já possui uma conta? <a href="#" onclick="abrirLogin()">Fazer login</a></p>
+           </div>
+
+
+           <div class="auth-card">
+               <input type="email" placeholder="Digite seu e-mail" class="auth-input">
+               <input type="password" placeholder="Crie uma senha" class="auth-input">
+               <button class="btn-continuar-auth" onclick="realizarLogin()">Continuar</button>
+           </div>
+       </div>
+   </main>
+
+
+   <main id="pagina-carrinho" class="container" style="display: none;">
+       <div class="top-nav-curso">
+           <h2>Seu Carrinho</h2>
+           <a href="#" class="voltar-link" onclick="mostrarHome()">Continuar comprando</a>
+       </div>
+
+
+       <div id="itens-carrinho" class="course-list">
+           <p id="carrinho-vazio" style="text-align: center; padding: 50px; color: #888;">
+               Seu carrinho está vazio.
+           </p>
+       </div>
+
+
+       <div id="resumo-carrinho" class="card-inscricao" style="display: none; margin-top: 30px;">
+           <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
+               <span>Total:</span>
+               <strong id="total-carrinho">R$ 0,00</strong>
+           </div>
+         
+           <button class="btn-continuar" onclick="finalizarCompra()">
+               Finalizar Matrícula
+           </button>
+       </div>
+   </main>
+
+
+   <main id="pagina-perfil" class="container" style="display: none;">
+       <div class="top-nav-curso">
+           <h2>Minha Conta</h2>
+           <a href="#" class="voltar-link" onclick="fazerLogout()" style="color: #ff4d4d;">
+               Sair
+           </a>
+       </div>
+
+
+       <div class="curso-layout">
+           <div class="curso-texto">
+               <h3 style="font-size: 24px; margin-bottom: 10px;">
+                   Olá, <span id="nome-aluno">Estudante</span>!
+               </h3>
+
+
+               <p class="abnt-text">
+                   Bem-vindo à sua área exclusiva. Aqui você pode conferir seus cursos ativos e progresso acadêmico.
+               </p>
+
+
+               <div class="auth-card" style="margin-top: 20px;">
+                   <h4 style="margin-bottom: 15px;">Cursos em Andamento</h4>
+
+
+                   <div id="lista-cursos-aluno">
+                       <p style="color: #888; font-size: 13px;">
+                           Você ainda não possui matrículas ativas.
+                       </p>
+                   </div>
+               </div>
+           </div>
+
+
+           <div class="curso-imagem-container">
+               <div class="auth-card" style="text-align: center;">
+                   <div style="width: 80px; height: 80px; background: #f0f0f0; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 30px;"></div>
+                   <p><strong>Status:</strong> Aluno Ativo</p>
+                   <p style="font-size: 12px; color: #888;">Membro desde: Março 2026</p>
+               </div>
+           </div>
+       </div>
+   </main>
+
+
+   <script src="script.js"></script>
+</body>
+</html>
