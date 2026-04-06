@@ -13,7 +13,7 @@ A Mentalize busca democratizar o conhecimento por meio de uma interface simples,
 * Área do aluno (perfil e cursos em andamento)
 * Sistema de login e cadastro
 * Formulário de inscrição nos cursos
-* Interface moderna e responsiva
+  
 
 ---
 
